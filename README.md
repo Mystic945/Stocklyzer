@@ -7,7 +7,6 @@ powered by Claude.
 
 Stocklyzer is a **portfolio tracker + analytics layer**, not a price predictor — it
 doesn't forecast future stock prices or give buy/sell recommendations.
-Link for Stocklyzer: https://stocklyzer-nine.vercel.app/login
 
 ---
 

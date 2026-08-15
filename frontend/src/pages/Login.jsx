@@ -20,7 +20,7 @@ export default function Login() {
       callback: async (response) => {
         try {
           await loginWithGoogle(response.credential)
-          navigate('/')
+          navigate('/dashboard')
         } catch (err) {
           setError('Google sign-in failed. Please try again.')
         }
@@ -39,7 +39,7 @@ export default function Login() {
     setSubmitting(true)
     try {
       await login({ email, password })
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       setError(err.response?.data?.detail || 'Login failed. Check your credentials.')
     } finally {

@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav style={styles.nav}>
-      <Link to="/" style={styles.brand}>
+      <Link to="/dashboard" style={styles.brand}>
         <span style={styles.brandMark}>◆</span> Stocklyzer
       </Link>
       {user && (
@@ -17,7 +17,7 @@ export default function Navbar() {
             style={styles.logoutBtn}
             onClick={() => {
               logout()
-              navigate('/login')
+              navigate('/')
             }}
           >
             Sign out

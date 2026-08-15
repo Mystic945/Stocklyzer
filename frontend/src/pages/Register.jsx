@@ -17,7 +17,7 @@ export default function Register() {
     setSubmitting(true)
     try {
       await register({ email, fullName, password })
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       setError(err.response?.data?.detail || 'Could not create account.')
     } finally {
