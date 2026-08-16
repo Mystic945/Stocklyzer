@@ -12,7 +12,7 @@ export default function RiskPanel({ risk }) {
     <div>
       <div style={styles.metricGrid}>
         {metrics.map((m) => (
-          <div key={m.label} style={styles.metricCard}>
+          <div key={m.label} className="glass" style={styles.metricCard}>
             <div style={styles.metricLabel}>{m.label}</div>
             <div className="mono-num" style={styles.metricValue}>{m.value}</div>
           </div>

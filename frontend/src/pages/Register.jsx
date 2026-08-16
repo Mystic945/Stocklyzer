@@ -27,7 +27,7 @@ export default function Register() {
 
   return (
     <div style={styles.page}>
-      <div style={styles.card}>
+      <div className="glass" style={styles.card}>
         <h1 style={styles.title}>Create your account</h1>
         <p style={styles.subtitle}>Start tracking a portfolio in minutes.</p>
 

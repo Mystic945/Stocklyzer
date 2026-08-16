@@ -22,7 +22,7 @@ const FEATURES = [
 export default function Landing() {
   return (
     <div style={styles.page}>
-      <nav style={styles.nav}>
+      <nav className="glass" style={styles.nav}>
         <div style={styles.brand}>
           <span style={styles.brandMark}>◆</span> Stocklyzer
         </div>
@@ -47,7 +47,7 @@ export default function Landing() {
           </div>
         </div>
 
-        <div style={styles.heroCard}>
+        <div className="glass" style={styles.heroCard}>
           <div style={styles.heroCardHeader}>
             <span>Long-term growth</span>
             <span style={styles.heroCardCurrency}>USD</span>
@@ -75,7 +75,7 @@ export default function Landing() {
         <h2 style={styles.featuresTitle}>Everything you need, nothing you don't</h2>
         <div style={styles.featureGrid}>
           {FEATURES.map((f) => (
-            <div key={f.title} style={styles.featureCard}>
+            <div key={f.title} className="glass" style={styles.featureCard}>
               <h3 style={styles.featureTitle}>{f.title}</h3>
               <p style={styles.featureDesc}>{f.desc}</p>
             </div>

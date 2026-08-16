@@ -49,7 +49,7 @@ export default function Login() {
 
   return (
     <div style={styles.page}>
-      <div style={styles.card}>
+      <div className="glass" style={styles.card}>
         <h1 style={styles.title}>Welcome back</h1>
         <p style={styles.subtitle}>Sign in to your Stocklyzer portfolios.</p>
 

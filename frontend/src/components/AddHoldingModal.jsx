@@ -27,7 +27,7 @@ export default function AddHoldingModal({ onClose, onSubmit }) {
 
   return (
     <div style={styles.backdrop} onClick={onClose}>
-      <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div className="glass" style={styles.modal} onClick={(e) => e.stopPropagation()}>
         <h3 style={{ marginBottom: 4 }}>Add a holding</h3>
         <p style={styles.subtitle}>Enter the ticker symbol as listed on the exchange (e.g. AAPL, RELIANCE.NS).</p>
         <form onSubmit={handleSubmit} style={styles.form}>

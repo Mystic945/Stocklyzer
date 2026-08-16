@@ -19,7 +19,7 @@ export default function AIInsightCard({ onGenerate }) {
   }
 
   return (
-    <div style={styles.card}>
+    <div className="glass" style={styles.card}>
       <div style={styles.header}>
         <h3 style={styles.title}>AI portfolio insight</h3>
         <button style={styles.genBtn} onClick={handleGenerate} disabled={loading}>

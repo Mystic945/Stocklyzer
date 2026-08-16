@@ -6,7 +6,7 @@ export default function Navbar() {
   const navigate = useNavigate()
 
   return (
-    <nav style={styles.nav}>
+    <nav className="glass" style={styles.nav}>
       <Link to="/dashboard" style={styles.brand}>
         <span style={styles.brandMark}>◆</span> Stocklyzer
       </Link>

@@ -6,7 +6,7 @@ export default function PortfolioCard({ portfolio, summary }) {
   const isPositive = gain >= 0
 
   return (
-    <Link to={`/portfolios/${portfolio.id}`} style={styles.card}>
+    <Link to={`/portfolios/${portfolio.id}`} className="glass" style={styles.card}>
       <div style={styles.header}>
         <h3 style={styles.name}>{portfolio.name}</h3>
         <span style={styles.currency}>{portfolio.base_currency}</span>
