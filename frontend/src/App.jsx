@@ -12,29 +12,31 @@ export default function App() {
   return (
     <>
       <AmbientBackground />
+      <div className="app-content">
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/portfolios/:portfolioId"
+            element={
+              <ProtectedRoute>
+                <PortfolioDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
       <CursorGlow />
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/portfolios/:portfolioId"
-          element={
-            <ProtectedRoute>
-              <PortfolioDetail />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
     </>
   )
 }

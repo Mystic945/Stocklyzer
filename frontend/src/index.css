@@ -118,6 +118,12 @@ input, select {
 
 #root {
   position: relative;
+}
+
+/* Sits above the ambient background (z-index 0) and below the cursor glow
+   (z-index 2), so page content is never hidden behind the watery backdrop */
+.app-content {
+  position: relative;
   z-index: 1;
 }
 
@@ -133,38 +139,38 @@ input, select {
 .ambient-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.35;
+  filter: blur(110px);
+  opacity: 0.18;
   mix-blend-mode: screen;
   will-change: transform;
 }
 
 .ambient-blob--amber {
-  width: 46vw;
-  height: 46vw;
-  top: -12vw;
-  left: -8vw;
+  width: 34vw;
+  height: 34vw;
+  top: -10vw;
+  left: -6vw;
   background: radial-gradient(circle at 30% 30%, #F5B942, transparent 70%);
-  animation: drift-a 26s ease-in-out infinite;
+  animation: drift-a 34s ease-in-out infinite;
 }
 
 .ambient-blob--emerald {
-  width: 40vw;
-  height: 40vw;
-  bottom: -14vw;
-  right: -6vw;
+  width: 28vw;
+  height: 28vw;
+  bottom: -12vw;
+  right: -4vw;
   background: radial-gradient(circle at 60% 40%, #34D399, transparent 70%);
-  animation: drift-b 32s ease-in-out infinite;
+  animation: drift-b 40s ease-in-out infinite;
 }
 
 .ambient-blob--blue {
-  width: 34vw;
-  height: 34vw;
+  width: 24vw;
+  height: 24vw;
   top: 30vh;
-  left: 50vw;
+  left: 55vw;
   background: radial-gradient(circle at 50% 50%, #4C8BF5, transparent 70%);
-  opacity: 0.22;
-  animation: drift-c 38s ease-in-out infinite;
+  opacity: 0.12;
+  animation: drift-c 46s ease-in-out infinite;
 }
 
 @keyframes drift-a {
@@ -187,21 +193,22 @@ input, select {
 .ambient-grain {
   position: absolute;
   inset: 0;
-  opacity: 0.035;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Cursor spotlight — a soft light that trails the pointer, sitting above the
-   ambient blobs but below page content, so it "lights up" whatever is near it */
+/* Cursor spotlight — a soft light that trails the pointer, layered above
+   both the ambient background and the page content, so it gently "lights
+   up" whatever is near it without ever blocking clicks (pointer-events: none) */
 .cursor-glow {
   position: fixed;
   inset: 0;
   z-index: 2;
   pointer-events: none;
   background: radial-gradient(
-    420px circle at var(--glow-x, 50vw) var(--glow-y, 40vh),
-    rgba(245, 185, 66, 0.10),
-    rgba(245, 185, 66, 0.04) 35%,
+    320px circle at var(--glow-x, 50vw) var(--glow-y, 40vh),
+    rgba(245, 185, 66, 0.06),
+    rgba(245, 185, 66, 0.02) 35%,
     transparent 65%
   );
 }
